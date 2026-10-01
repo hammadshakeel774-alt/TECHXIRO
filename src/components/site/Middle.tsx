@@ -16,7 +16,7 @@ const steps = [
 
 export function Architecture() {
   const [active, setActive] = useState(0);
-  const A = steps[active];
+  const A = steps[active]!;
   return (
     <section id="solutions" className="mx-auto max-w-7xl px-5 py-24 lg:px-8 lg:py-32">
       <SectionHeader eyebrow="System Architecture" title="One Intelligent Workflow. Complete Business Visibility." />

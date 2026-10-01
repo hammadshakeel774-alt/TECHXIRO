@@ -55,7 +55,7 @@ export function Dashboard() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const id = setInterval(() => {
-      setData((d) => [...d.slice(1), Math.max(15, Math.min(95, d[d.length - 1] + Math.round(Math.random() * 30 - 15)))]);
+      setData((d) => [...d.slice(1), Math.max(15, Math.min(95, d[d.length - 1]! + Math.round(Math.random() * 30 - 15)))]);
       setProcessed((p) => p + Math.round(Math.random() * 40 + 10));
     }, 1400);
     return () => clearInterval(id);
