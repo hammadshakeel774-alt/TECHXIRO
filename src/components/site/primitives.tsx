@@ -78,7 +78,7 @@ export function Logo() {
       <span className="relative grid h-7 w-7 place-items-center rounded-md border border-primary/50">
         <span className="h-2.5 w-2.5 rotate-45 bg-primary" />
       </span>
-      TECH<span className="text-primary">X</span>IRO
+      <span>TECH<span className="text-primary">X</span>IRO</span>
     </a>
   );
 }
