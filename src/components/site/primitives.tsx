@@ -60,10 +60,10 @@ export function Btn({
       }}
       onMouseLeave={() => ref.current && (ref.current.style.transform = "")}
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-[transform,background-color,box-shadow] duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+        "inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-sm font-medium transition-[transform,background-color,box-shadow] duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         variant === "primary"
-          ? "bg-primary text-primary-foreground hover:shadow-glow"
-          : "border border-border bg-secondary/40 text-foreground hover:bg-secondary",
+          ? "bg-primary text-primary-foreground shadow-sm hover:bg-primary/90"
+          : "border border-border bg-card text-foreground hover:bg-secondary",
         className,
       )}
     >
@@ -75,8 +75,8 @@ export function Btn({
 export function Logo() {
   return (
     <a href="#home" className="flex items-center gap-2 font-semibold tracking-[0.18em]" aria-label="TECHXIRO home">
-      <span className="relative grid h-7 w-7 place-items-center rounded-md border border-primary/50">
-        <span className="h-2.5 w-2.5 rotate-45 bg-primary" />
+      <span className="relative grid h-7 w-7 place-items-center rounded-md bg-primary">
+        <span className="h-2.5 w-2.5 rotate-45 bg-primary-foreground" />
       </span>
       <span>TECH<span className="text-primary">X</span>IRO</span>
     </a>

@@ -123,13 +123,8 @@ export function Dashboard() {
 }
 
 export function CTA() {
-  const particles = Array.from({ length: 24 }, (_, i) => ({ left: (i * 37) % 100, delay: (i * 0.7) % 12, dur: 10 + (i % 5) * 2 }));
   return (
-    <section className="relative overflow-hidden border-y border-border">
-      <div className="absolute left-1/2 top-1/2 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-glow/15 blur-3xl" aria-hidden />
-      {particles.map((p, i) => (
-        <span key={i} aria-hidden className="absolute bottom-0 h-1 w-1 rounded-full bg-primary" style={{ left: `${p.left}%`, animation: `drift ${p.dur}s linear ${p.delay}s infinite`, opacity: 0 }} />
-      ))}
+    <section className="relative overflow-hidden border-y border-border bg-surface/60">
       <div className="relative mx-auto max-w-4xl px-5 py-28 text-center lg:py-40">
         <Reveal><h2 className="text-4xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">Ready to Build <span className="text-gradient">With AI?</span></h2></Reveal>
         <Reveal delay={100}><p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground">Transform your data, automate your operations, and build intelligent systems designed for scale.</p></Reveal>
