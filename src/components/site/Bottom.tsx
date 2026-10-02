@@ -123,13 +123,8 @@ export function Dashboard() {
 }
 
 export function CTA() {
-  const particles = Array.from({ length: 24 }, (_, i) => ({ left: (i * 37) % 100, delay: (i * 0.7) % 12, dur: 10 + (i % 5) * 2 }));
   return (
-    <section className="relative overflow-hidden border-y border-border">
-      <div className="absolute left-1/2 top-1/2 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-glow/15 blur-3xl" aria-hidden />
-      {particles.map((p, i) => (
-        <span key={i} aria-hidden className="absolute bottom-0 h-1 w-1 rounded-full bg-primary" style={{ left: `${p.left}%`, animation: `drift ${p.dur}s linear ${p.delay}s infinite`, opacity: 0 }} />
-      ))}
+    <section className="relative overflow-hidden border-y border-border bg-surface/60">
       <div className="relative mx-auto max-w-4xl px-5 py-28 text-center lg:py-40">
         <Reveal><h2 className="text-4xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">Ready to Build <span className="text-gradient">With AI?</span></h2></Reveal>
         <Reveal delay={100}><p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground">Transform your data, automate your operations, and build intelligent systems designed for scale.</p></Reveal>
@@ -230,7 +225,7 @@ export function Contact() {
                 {errors.message && <span className="mt-1 block text-xs text-destructive">{errors.message}</span>}
               </label>
               {status === "error" && <p className="text-sm text-destructive sm:col-span-2">Something went wrong. Please try again.</p>}
-              <button type="submit" disabled={status === "sending"} className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-shadow hover:shadow-glow disabled:opacity-60 sm:col-span-2 sm:justify-self-start">
+              <button type="submit" disabled={status === "sending"} className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 disabled:opacity-60 sm:col-span-2 sm:justify-self-start">
                 {status === "sending" ? "Sending…" : "Send Request"} <ArrowRight className="h-4 w-4" />
               </button>
             </form>
