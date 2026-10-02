@@ -225,7 +225,7 @@ export function Contact() {
                 {errors.message && <span className="mt-1 block text-xs text-destructive">{errors.message}</span>}
               </label>
               {status === "error" && <p className="text-sm text-destructive sm:col-span-2">Something went wrong. Please try again.</p>}
-              <button type="submit" disabled={status === "sending"} className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-shadow hover:shadow-glow disabled:opacity-60 sm:col-span-2 sm:justify-self-start">
+              <button type="submit" disabled={status === "sending"} className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 disabled:opacity-60 sm:col-span-2 sm:justify-self-start">
                 {status === "sending" ? "Sending…" : "Send Request"} <ArrowRight className="h-4 w-4" />
               </button>
             </form>

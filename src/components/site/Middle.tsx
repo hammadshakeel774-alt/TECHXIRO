@@ -24,7 +24,7 @@ export function Architecture() {
         <ol className="relative space-y-2 border-l border-border pl-6 lg:pl-8">
           {steps.map((s, i) => (
             <li key={s.t} className="relative">
-              <span className={cn("absolute -left-[29px] top-6 h-2.5 w-2.5 rounded-full border border-primary transition-all lg:-left-[37px]", i <= active ? "bg-primary shadow-glow" : "bg-background")} />
+              <span className={cn("absolute -left-[29px] top-6 h-2.5 w-2.5 rounded-full border border-primary transition-all lg:-left-[37px]", i <= active ? "bg-primary" : "bg-background")} />
               <button
                 onMouseEnter={() => setActive(i)}
                 onFocus={() => setActive(i)}
@@ -54,7 +54,7 @@ export function Architecture() {
           <div className="relative flex items-center justify-between gap-1 py-10">
             {steps.map((s, i) => (
               <div key={s.t} className="flex flex-1 items-center">
-                <div className={cn("grid h-11 w-11 shrink-0 place-items-center rounded-xl border transition-all duration-500 sm:h-14 sm:w-14", i === active ? "scale-110 border-primary bg-primary text-primary-foreground shadow-glow" : i < active ? "border-primary/50 text-primary" : "border-border text-muted-foreground")}>
+                <div className={cn("grid h-11 w-11 shrink-0 place-items-center rounded-xl border transition-all duration-500 sm:h-14 sm:w-14", i === active ? "scale-110 border-primary bg-primary text-primary-foreground shadow-sm" : i < active ? "border-primary/50 text-primary" : "border-border text-muted-foreground")}>
                   <s.icon className="h-5 w-5" />
                 </div>
                 {i < steps.length - 1 && (
@@ -91,7 +91,7 @@ export function Technology() {
       <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
         {techs.map((t, i) => (
           <Reveal key={t.t} delay={i * 60} className="group relative h-full bg-background p-8 transition-colors duration-300 hover:bg-surface">
-            <div className="grid h-12 w-12 place-items-center rounded-xl border border-border transition-all duration-500 group-hover:-translate-y-1 group-hover:rotate-6 group-hover:border-primary/60 group-hover:shadow-glow">
+            <div className="grid h-12 w-12 place-items-center rounded-xl border border-border transition-all duration-500 group-hover:-translate-y-1 group-hover:border-primary/60 group-hover:shadow-sm">
               <t.icon className="h-5 w-5 text-primary" />
             </div>
             <h3 className="mt-6 text-lg font-medium">{t.t}</h3>
