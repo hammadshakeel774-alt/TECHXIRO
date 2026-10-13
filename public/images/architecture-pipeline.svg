@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" fill="none" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pipe-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="50%" stop-color="#6366F1" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="600" height="300" rx="16" fill="#090D16" stroke="#1E293B" stroke-width="1.5" />
+  
+  <!-- Flow Line -->
+  <path d="M 60 150 L 540 150" stroke="url(#pipe-grad)" stroke-width="3" stroke-dasharray="8 6" opacity="0.8" />
+  
+  <!-- Nodes -->
+  <!-- 1. Data Capture -->
+  <g transform="translate(60, 150)">
+    <circle r="30" fill="#0F172A" stroke="#3B82F6" stroke-width="2" />
+    <path d="M-10 -10 H10 V10 H-10 Z" fill="none" stroke="#60A5FA" stroke-width="2" />
+    <text y="48" text-anchor="middle" font-family="'Sora', sans-serif" font-size="12" fill="#94A3B8">Data Capture</text>
+  </g>
+  
+  <!-- 2. Processing -->
+  <g transform="translate(180, 150)">
+    <circle r="30" fill="#0F172A" stroke="#6366F1" stroke-width="2" />
+    <circle r="12" fill="none" stroke="#818CF8" stroke-width="2" stroke-dasharray="4 4" />
+    <text y="48" text-anchor="middle" font-family="'Sora', sans-serif" font-size="12" fill="#94A3B8">AI Processing</text>
+  </g>
+  
+  <!-- 3. Insights -->
+  <g transform="translate(300, 150)">
+    <circle r="36" fill="#1E1B4B" stroke="#8B5CF6" stroke-width="2.5" />
+    <polygon points="0,-12 12,10 -12,10" fill="#A78BFA" />
+    <text y="52" text-anchor="middle" font-family="'Sora', sans-serif" font-size="12" font-weight="600" fill="#F8FAFC">Insights</text>
+  </g>
+  
+  <!-- 4. Validation -->
+  <g transform="translate(420, 150)">
+    <circle r="30" fill="#0F172A" stroke="#06B6D4" stroke-width="2" />
+    <path d="M-8 0 L-2 6 L10 -6" fill="none" stroke="#22D3EE" stroke-width="2.5" stroke-linecap="round" />
+    <text y="48" text-anchor="middle" font-family="'Sora', sans-serif" font-size="12" fill="#94A3B8">Validation</text>
+  </g>
+  
+  <!-- 5. Integration -->
+  <g transform="translate(540, 150)">
+    <circle r="30" fill="#0F172A" stroke="#10B981" stroke-width="2" />
+    <path d="M-8 -8 L8 8 M8 -8 L-8 8" fill="none" stroke="#34D399" stroke-width="2" />
+    <text y="48" text-anchor="middle" font-family="'Sora', sans-serif" font-size="12" fill="#94A3B8">Integration</text>
+  </g>
+</svg>

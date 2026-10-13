@@ -1,26 +1,43 @@
-# Your Awesome Website
+# TECHXIRO — Enterprise AI Systems
 
-create a fully functional website
+Intelligent AI systems that transform data, automate operations, and deliver real-time actionable decisions.
 
-This project was built with [Lovable](https://lovable.dev).
+## Features
 
-**Live app**: https://build-your-world-805.lovable.app
+- **Computer Vision & Video Intelligence**
+- **Machine Learning & Predictive Analytics**
+- **Enterprise AI Agents & Automation**
+- **Data Intelligence & Analytics**
 
-## Build with Lovable
+## Image Assets
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/1d10d9f4-0bf2-47a9-a840-9562235b5bff).
+All application images are organized in `public/images/` and can be referenced from the app with `/images/<filename>` URLs:
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+- `public/images/logo.svg`, `logo.png`, `techxiro-icon.svg`, and `techxiro-logo.png` — Brand assets
+- `public/images/hero-visualization.svg` — Hero AI network diagram
+- `public/images/architecture-pipeline.svg` — System pipeline architecture illustration
+- `public/images/dashboard-preview.svg` — Platform preview diagram
+- `public/images/favicon.png` and `favicon.ico` — Browser and device icons
 
-## Development
+## Local Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+You need Node.js and npm installed.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
 npm run dev
 ```
+
+Vite prints the local URL when the development server starts.
+
+## Contact Form Email
+
+The contact form validates submissions and sends them through Resend; CAPTCHA is not used.
+
+1. Create a Resend API key and verify the sending domain used for `CONTACT_FROM_EMAIL`.
+2. Set `RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, and `CONTACT_TO_EMAIL` in an untracked
+   `.env.local` file for local development and in your deployment's environment configuration.
+3. Restart the local server after changing `.env.local`.
+
+`.env.example` lists the required variable names without containing credentials. The server
+reports email delivery failures rather than showing a false success.
