@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none" width="100%" height="100%">
+  <defs>
+    <linearGradient id="dash-chart-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dashboard Container -->
+  <rect width="800" height="450" rx="16" fill="#0B0F19" stroke="#1E293B" stroke-width="2" />
+  
+  <!-- Top Header Bar -->
+  <rect x="0" y="0" width="800" height="48" fill="#0F172A" rx="16" />
+  <circle cx="30" cy="24" r="5" fill="#EF4444" />
+  <circle cx="46" cy="24" r="5" fill="#F59E0B" />
+  <circle cx="62" cy="24" r="5" fill="#10B981" />
+  <text x="760" y="28" font-family="monospace" font-size="11" fill="#10B981" text-anchor="end">SYSTEM ONLINE ● 99.98%</text>
+
+  <!-- Metric Cards -->
+  <g transform="translate(24, 70)">
+    <!-- Card 1 -->
+    <rect x="0" y="0" width="170" height="80" rx="10" fill="#1E293B" opacity="0.6" stroke="#334155" />
+    <text x="16" y="28" font-family="'Sora', sans-serif" font-size="11" fill="#94A3B8">RECORDS PROCESSED</text>
+    <text x="16" y="58" font-family="'Sora', sans-serif" font-size="20" font-weight="700" fill="#F8FAFC">1,482,900</text>
+
+    <!-- Card 2 -->
+    <rect x="190" y="0" width="170" height="80" rx="10" fill="#1E293B" opacity="0.6" stroke="#334155" />
+    <text x="206" y="28" font-family="'Sora', sans-serif" font-size="11" fill="#94A3B8">ACCURACY RATE</text>
+    <text x="206" y="58" font-family="'Sora', sans-serif" font-size="20" font-weight="700" fill="#60A5FA">99.4%</text>
+
+    <!-- Card 3 -->
+    <rect x="380" y="0" width="170" height="80" rx="10" fill="#1E293B" opacity="0.6" stroke="#334155" />
+    <text x="396" y="28" font-family="'Sora', sans-serif" font-size="11" fill="#94A3B8">ACTIVE AGENTS</text>
+    <text x="396" y="58" font-family="'Sora', sans-serif" font-size="20" font-weight="700" fill="#A78BFA">24 Active</text>
+
+    <!-- Card 4 -->
+    <rect x="570" y="0" width="180" height="80" rx="10" fill="#1E293B" opacity="0.6" stroke="#334155" />
+    <text x="586" y="28" font-family="'Sora', sans-serif" font-size="11" fill="#94A3B8">AVG LATENCY</text>
+    <text x="586" y="58" font-family="'Sora', sans-serif" font-size="20" font-weight="700" fill="#34D399">18 ms</text>
+  </g>
+
+  <!-- Main Chart Section -->
+  <g transform="translate(24, 170)">
+    <rect x="0" y="0" width="510" height="250" rx="12" fill="#131C2E" stroke="#1E293B" />
+    <text x="20" y="30" font-family="'Sora', sans-serif" font-size="13" font-weight="600" fill="#E2E8F0">Live Data Ingestion &amp; Analytics</text>
+    
+    <!-- Chart Graph -->
+    <path d="M 30 200 Q 100 120 180 160 T 320 90 T 480 110 L 480 210 L 30 210 Z" fill="url(#dash-chart-grad)" />
+    <path d="M 30 200 Q 100 120 180 160 T 320 90 T 480 110" fill="none" stroke="#3B82F6" stroke-width="2.5" />
+  </g>
+
+  <!-- Side Activity Feed -->
+  <g transform="translate(554, 170)">
+    <rect x="0" y="0" width="220" height="250" rx="12" fill="#131C2E" stroke="#1E293B" />
+    <text x="16" y="30" font-family="'Sora', sans-serif" font-size="13" font-weight="600" fill="#E2E8F0">System Logs</text>
+    
+    <circle cx="24" cy="65" r="4" fill="#3B82F6" />
+    <text x="36" y="68" font-family="sans-serif" font-size="11" fill="#94A3B8">Vision model update complete</text>
+
+    <circle cx="24" cy="105" r="4" fill="#10B981" />
+    <text x="36" y="108" font-family="sans-serif" font-size="11" fill="#94A3B8">1,240 records validated</text>
+
+    <circle cx="24" cy="145" r="4" fill="#8B5CF6" />
+    <text x="36" y="148" font-family="sans-serif" font-size="11" fill="#94A3B8">Agent pipeline re-balanced</text>
+
+    <circle cx="24" cy="185" r="4" fill="#F59E0B" />
+    <text x="36" y="188" font-family="sans-serif" font-size="11" fill="#94A3B8">Anomaly threshold tuned</text>
+  </g>
+</svg>

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 
 export function useInView<T extends Element>(threshold = 0.2) {
@@ -22,21 +23,47 @@ export function useInView<T extends Element>(threshold = 0.2) {
   return { ref, inView };
 }
 
-export function Reveal({ children, className, delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
+export function Reveal({
+  children,
+  className,
+  delay = 0,
+}: {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+}) {
   const { ref, inView } = useInView<HTMLDivElement>(0.12);
   return (
-    <div ref={ref} className={cn("reveal", inView && "in", className)} style={{ transitionDelay: `${delay}ms` }}>
+    <div
+      ref={ref}
+      className={cn("reveal", inView && "in", className)}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
       {children}
     </div>
   );
 }
 
-export function SectionHeader({ eyebrow, title, text, center }: { eyebrow: string; title: ReactNode; text?: string; center?: boolean }) {
+export function SectionHeader({
+  eyebrow,
+  title,
+  text,
+  center,
+}: {
+  eyebrow: string;
+  title: ReactNode;
+  text?: string;
+  center?: boolean;
+}) {
   return (
     <Reveal className={cn("max-w-3xl", center && "mx-auto text-center")}>
       <p className="eyebrow">{eyebrow}</p>
-      <h2 className="mt-4 text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl lg:text-5xl">{title}</h2>
-      {text && <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">{text}</p>}
+      <h2 className="mt-4 text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl lg:text-5xl">
+        {title}
+      </h2>
+      {text && (
+        <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">{text}</p>
+      )}
     </Reveal>
   );
 }
@@ -46,12 +73,20 @@ export function Btn({
   children,
   variant = "primary",
   className,
-}: { href: string; children: ReactNode; variant?: "primary" | "ghost"; className?: string }) {
+  onClick,
+}: {
+  href: "/" | "/solutions" | "/technology" | "/how-it-works" | "/benefits" | "/about" | "/contact";
+  children: ReactNode;
+  variant?: "primary" | "ghost";
+  className?: string;
+  onClick?: () => void;
+}) {
   const ref = useRef<HTMLAnchorElement>(null);
   return (
-    <a
+    <Link
       ref={ref}
-      href={href}
+      to={href}
+      onClick={onClick}
       onMouseMove={(e) => {
         const el = ref.current;
         if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -68,17 +103,31 @@ export function Btn({
       )}
     >
       {children}
-    </a>
+    </Link>
   );
 }
 
 export function Logo() {
   return (
-    <a href="#home" className="flex items-center gap-2 font-semibold tracking-[0.18em]" aria-label="TECHXIRO home">
-      <span className="relative grid h-7 w-7 place-items-center rounded-md bg-primary">
-        <span className="h-2.5 w-2.5 rotate-45 bg-primary-foreground" />
+    <Link
+      to="/"
+      className="flex items-center gap-3 font-semibold tracking-[0.16em] text-xl"
+      aria-label="TECHXIRO home"
+    >
+      <span className="relative h-8 w-[52px] shrink-0 overflow-hidden" aria-hidden="true">
+        <img
+          src="/images/techxiro-logo.png"
+          alt=""
+          className="absolute left-[-13px] top-[-13px] h-[85px] w-[85px] max-w-none mix-blend-multiply"
+        />
       </span>
-      <span>TECH<span className="text-primary">X</span>IRO</span>
-    </a>
+      <span className="font-bold tracking-wider text-foreground text-xl">
+        TECH
+        <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-400 bg-clip-text text-transparent font-extrabold">
+          X
+        </span>
+        IRO
+      </span>
+    </Link>
   );
 }

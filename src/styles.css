@@ -65,8 +65,13 @@
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -74,7 +79,9 @@
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
-  ::selection { background: color-mix(in oklab, var(--primary) 20%, transparent); }
+  ::selection {
+    background: color-mix(in oklab, var(--primary) 20%, transparent);
+  }
 }
 
 @utility text-gradient {
@@ -88,7 +95,9 @@
   border: 1px solid var(--border);
   box-shadow: 0 1px 2px oklch(0.22 0.03 265 / 5%);
 }
-@utility shadow-glow { box-shadow: var(--shadow-glow); }
+@utility shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
 @utility grid-bg {
   background-image:
     linear-gradient(var(--border) 1px, transparent 1px),
@@ -105,23 +114,98 @@
   color: var(--primary);
 }
 
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
-.reveal.in { opacity: 1; transform: none; }
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
 
-@keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
-@keyframes dash { to { stroke-dashoffset: -40; } }
-@keyframes pulse-dot { 0%,100% { opacity: 1 } 50% { opacity: .3 } }
-@keyframes drift { 0% { transform: translateY(0); opacity: 0 } 20% { opacity: .8 } 100% { transform: translateY(-120vh); opacity: 0 } }
-@keyframes bar { 0%,100% { transform: scaleY(.4) } 50% { transform: scaleY(1) } }
-@keyframes marquee { to { transform: translateX(-50%); } }
-.animate-float { animation: float 6s ease-in-out infinite; }
-.animate-dash { stroke-dasharray: 4 6; animation: dash 1.6s linear infinite; }
-.animate-pulse-dot { animation: pulse-dot 1.8s ease-in-out infinite; }
-.animate-bar { transform-origin: bottom; animation: bar 2.4s ease-in-out infinite; }
-.animate-marquee { animation: marquee 40s linear infinite; }
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+@keyframes drift {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
+@keyframes bar {
+  0%,
+  100% {
+    transform: scaleY(0.4);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+.animate-dash {
+  stroke-dasharray: 4 6;
+  animation: dash 1.6s linear infinite;
+}
+.animate-pulse-dot {
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+.animate-bar {
+  transform-origin: bottom;
+  animation: bar 2.4s ease-in-out infinite;
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; }
-  .reveal { opacity: 1; transform: none; }
-  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }

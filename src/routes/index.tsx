@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Navbar, Hero, Intro, Metrics } from "@/components/site/Top";
-import { Architecture, Technology, ProblemSolution, Capabilities, Process, UseCases } from "@/components/site/Middle";
-import { Benefits, TechStack, Dashboard, CTA, Contact, Footer } from "@/components/site/Bottom";
+import { Hero } from "@/components/site/Top";
+import { CTA } from "@/components/site/Bottom";
 
 const title = "TECHXIRO — AI Systems That Turn Data Into Decisions";
-const description = "TECHXIRO builds intelligent AI systems — computer vision, machine learning, AI agents and automation — that transform data into real-time decisions.";
+const description =
+  "TECHXIRO builds intelligent AI systems — computer vision, machine learning, AI agents and automation — that transform data into real-time decisions.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,24 +23,10 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <>
-      <Navbar />
       <main>
         <Hero />
-        <Intro />
-        <Metrics />
-        <Architecture />
-        <Technology />
-        <ProblemSolution />
-        <Capabilities />
-        <Process />
-        <UseCases />
-        <Benefits />
-        <TechStack />
-        <Dashboard />
         <CTA />
-        <Contact />
       </main>
-      <Footer />
     </>
   );
 }
