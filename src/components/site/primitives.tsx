@@ -2,6 +2,8 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 
+const NAVBAR_LOGO_SRC = "/images/techxiro-navbar-logo.png";
+
 export function useInView<T extends Element>(threshold = 0.2) {
   const ref = useRef<T>(null);
   const [inView, setInView] = useState(false);
@@ -114,11 +116,14 @@ export function Logo() {
       className="flex items-center gap-3 font-semibold tracking-[0.16em] text-xl"
       aria-label="TECHXIRO home"
     >
-      <span className="relative h-8 w-[52px] shrink-0 overflow-hidden" aria-hidden="true">
+      <span
+        className="flex h-8 w-8 shrink-0 items-center justify-center"
+        aria-hidden="true"
+      >
         <img
-          src="/images/techxiro-logo.png"
+          src={NAVBAR_LOGO_SRC}
           alt=""
-          className="absolute left-[-13px] top-[-13px] h-[85px] w-[85px] max-w-none mix-blend-multiply"
+          className="block h-full w-full object-contain"
         />
       </span>
       <span className="font-bold tracking-wider text-foreground text-xl">
